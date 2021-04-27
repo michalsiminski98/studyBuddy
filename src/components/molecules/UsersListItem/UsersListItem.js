@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
+import { Wrapper, StyledAverage, StyledInfo } from './UsersListItem.styles';
+import Button from 'components/atoms/Button/Button';
+
 const UsersListItem = ({ userData: { name, attendance = '0%', average } }) => {
   return (
-    <li>
-      <p>{attendance}</p>
-      <p>{name}</p>
-      <p>{average}</p>
-      <button>X</button>
-    </li>
+    <Wrapper>
+      <StyledAverage value={average}>{average}</StyledAverage>
+      <StyledInfo>
+        <p>
+          {name}
+          <Button />
+        </p>
+        <p>{attendance}</p>
+      </StyledInfo>
+    </Wrapper>
   );
 };
 
